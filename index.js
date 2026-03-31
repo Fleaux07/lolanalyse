@@ -6,6 +6,8 @@ const axios = require('axios');
 const app = express();
 const PORT = 3000;
 
+app.use(express.static('public'));
+
 
 const API_KEY = process.env.RIOT_API_KEY;
 
@@ -27,11 +29,31 @@ app.get('/player/:gameName/:tagLine', async (req, res) => {
         
         const matchlist = matchresponse.data;
 
+        const matchdetails = await Promise.all(
+            matchlist.map(async (matchId) => {
+                const detailUrl = `https://europe.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${API_KEY}`;
+                const detailReponse = await axios.get(detailUrl);
+                const matchData = detailReponse.data;
 
-        res.json(matchlist);
+                const player = matchData.info.participants.find(player => player.puuid === puuid);
+
+                return {
+                    id: matchId,
+                    mode: matchData.info.gameMode,
+                    champion: player.championName,
+                    kills: player.kills,
+                    morts: player.deaths,
+                    assists: player.assists,
+                    victoire: player.win 
+                };
+            })
+        );
+
+
+        res.json(matchdetails);
 
     } catch (erreur) {
-        console.error("❌ Erreur :", erreur.response ? erreur.response.data : erreur.message);
+        console.error("Erreur :", erreur.response ? erreur.response.data : erreur.message);
         res.status(500).json({ message: "Joueur introuvable ou erreur avec l'API" });
     }
 });

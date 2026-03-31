@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus — Dominez la Faille</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&family=Barlow+Condensed:ital,wght@0,300;0,700;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body class="page-home">
+
+    <!-- Grille de fond animée -->
+    <div class="grid-bg"></div>
+    <div class="scanlines"></div>
+
+    <!-- Particules lumineuses -->
+    <div class="particles">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">◈</span>
+            NEXUS<span class="logo-dot">.GG</span>
+        </div>
+        <div class="nav-links">
+            <a href="/" class="nav-link active">Accueil</a>
+            <a href="#" class="nav-link">Classement</a>
+            <a href="#" class="nav-link nav-link--pro">Pro <span class="badge">BETA</span></a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <main class="hero">
+        <div class="hero-eyebrow">
+            <span class="dot dot--pulse"></span>
+            API Riot Games · Données en Direct
+        </div>
+
+        <h1 class="hero-title">
+            Dominez<br>
+            la <em>Faille</em>
+        </h1>
+
+        <p class="hero-sub">Analysez vos performances, décortiquez chaque partie, identifiez vos failles — et devenez inarrêtable.</p>
+
+        <!-- Formulaire de recherche -->
+        <form class="recherche" action="/profil.html" method="GET">
+            <div class="recherche-inner">
+                <div class="input-group">
+                    <label class="input-label">Invocateur</label>
+                    <input type="text" name="pseudo" placeholder="Pseudo (ex: Fleaux)" required autocomplete="off">
+                </div>
+                <div class="input-divider">#</div>
+                <div class="input-group input-group--tag">
+                    <label class="input-label">Tag</label>
+                    <input type="text" name="tag" placeholder="0000" required autocomplete="off" maxlength="6">
+                </div>
+            </div>
+            <button type="submit" class="btn-analyse">
+                <span class="btn-text">Initialiser l'Analyse</span>
+                <span class="btn-icon">⟶</span>
+            </button>
+        </form>
+
+        <p class="recherche-hint">Entrez votre Riot ID complet · EUW / EUNE / NA</p>
+    </main>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Temps Réel</h3>
+            <p>Connexion directe à l'API officielle Riot pour des données toujours synchronisées.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Historique Détaillé</h3>
+            <p>Vos derniers matchs, KDA, champions et évolution de rang visualisés en un clin d'œil.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Précision Hextech</h3>
+            <p>Des métriques avancées extraites du deep data pour comprendre ce qui fait la différence.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p class="footer-copy">© 2026 Nexus Analytics</p>
+        <p class="footer-legal">Nexus n'est pas affilié à Riot Games.</p>
+    </footer>
+
+</body>
+</html>

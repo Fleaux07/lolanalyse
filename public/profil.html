@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil — Nexus</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&family=Barlow+Condensed:ital,wght@0,300;0,700;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body class="page-profil">
+
+    <div class="grid-bg"></div>
+    <div class="scanlines"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">◈</span>
+            NEXUS<span class="logo-dot">.GG</span>
+        </div>
+        <a href="/" class="nav-back">
+            <span>←</span> Terminal
+        </a>
+    </nav>
+
+    <!-- HEADER DU PROFIL -->
+    <header class="profil-header">
+        <div class="profil-avatar">
+            <div class="avatar-ring"></div>
+            <div class="avatar-inner">
+                <span id="avatarInitiale">?</span>
+            </div>
+        </div>
+        <div class="profil-infos">
+            <div class="profil-eyebrow">Invocateur identifié</div>
+            <h1 class="profil-nom" id="nomJoueur">…</h1>
+            <div class="profil-tags">
+                <span class="tag-chip">Euw</span>
+                <span class="tag-chip" id="statusLive">
+                    <span class="dot dot--pulse"></span> Synchronisation…
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- STATS RAPIDES -->
+    <div class="stats-rapides" id="statsRapides" style="display:none">
+        <div class="stat-item">
+            <div class="stat-val" id="statMatchs">—</div>
+            <div class="stat-label">Matchs analysés</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-val" id="statWR">—</div>
+            <div class="stat-label">Winrate</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-val" id="statKDA">—</div>
+            <div class="stat-label">KDA moyen</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-val" id="statBestChamp">—</div>
+            <div class="stat-label">Champion fétiche</div>
+        </div>
+    </div>
+
+    <!-- ZONE MATCHS -->
+    <section class="matchs-section">
+        <div class="section-header">
+            <h2 class="section-title">Historique de Combat</h2>
+            <div class="section-line"></div>
+        </div>
+        <div id="zoneResultats"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
